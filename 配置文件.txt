@@ -1,28 +1,28 @@
-1.PropertiesÀàÓëPropertiesÅäÖÃÎÄ¼ş
-¡¡¡¡PropertiesÀà¼Ì³Ğ×ÔHashtableÀà²¢ÇÒÊµÏÖÁËMap½Ó¿Ú£¬Ò²ÊÇÊ¹ÓÃÒ»ÖÖ¼üÖµ¶ÔµÄĞÎÊ½À´±£´æÊôĞÔ¼¯¡£²»¹ıPropertiesÓĞÌØÊâµÄµØ·½£¬¾ÍÊÇËüµÄ¼üºÍÖµ¶¼ÊÇ×Ö·û´®ÀàĞÍ¡£
-2.PropertiesÖĞµÄÖ÷Òª·½·¨
+1.Propertiesç±»ä¸Propertiesé…ç½®æ–‡ä»¶
+ã€€ã€€Propertiesç±»ç»§æ‰¿è‡ªHashtableç±»å¹¶ä¸”å®ç°äº†Mapæ¥å£ï¼Œä¹Ÿæ˜¯ä½¿ç”¨ä¸€ç§é”®å€¼å¯¹çš„å½¢å¼æ¥ä¿å­˜å±æ€§é›†ã€‚ä¸è¿‡Propertiesæœ‰ç‰¹æ®Šçš„åœ°æ–¹ï¼Œå°±æ˜¯å®ƒçš„é”®å’Œå€¼éƒ½æ˜¯å­—ç¬¦ä¸²ç±»å‹ã€‚
+2.Propertiesä¸­çš„ä¸»è¦æ–¹æ³•
 (1)load(InputStream inStream)
- ¡¡¡¡Õâ¸ö·½·¨¿ÉÒÔ´Ó.propertiesÊôĞÔÎÄ¼ş¶ÔÓ¦µÄÎÄ¼şÊäÈëÁ÷ÖĞ£¬¼ÓÔØÊôĞÔÁĞ±íµ½PropertiesÀà¶ÔÏó¡£ÈçÏÂÃæµÄ´úÂë£º
+ ã€€ã€€è¿™ä¸ªæ–¹æ³•å¯ä»¥ä».propertieså±æ€§æ–‡ä»¶å¯¹åº”çš„æ–‡ä»¶è¾“å…¥æµä¸­ï¼ŒåŠ è½½å±æ€§åˆ—è¡¨åˆ°Propertiesç±»å¯¹è±¡ã€‚å¦‚ä¸‹é¢çš„ä»£ç ï¼š
 Properties pro = new Properties();
 FileInputStream in = new FileInputStream("a.properties");
 pro.load(in);
 in.close();
 (2)store(OutputStream out, String comments)
- ¡¡¡¡Õâ¸ö·½·¨½«PropertiesÀà¶ÔÏóµÄÊôĞÔÁĞ±í±£´æµ½Êä³öÁ÷ÖĞ¡£ÈçÏÂÃæµÄ´úÂë£º
+ ã€€ã€€è¿™ä¸ªæ–¹æ³•å°†Propertiesç±»å¯¹è±¡çš„å±æ€§åˆ—è¡¨ä¿å­˜åˆ°è¾“å‡ºæµä¸­ã€‚å¦‚ä¸‹é¢çš„ä»£ç ï¼š
 FileOutputStream oFile = new FileOutputStream(file, "a.properties");
 pro.store(oFile, "Comment");
 oFile.close();
-¡¡¡¡Èç¹ûcomments²»Îª¿Õ£¬±£´æºóµÄÊôĞÔÎÄ¼şµÚÒ»ĞĞ»áÊÇ#comments,±íÊ¾×¢ÊÍĞÅÏ¢£»Èç¹ûÎª¿ÕÔòÃ»ÓĞ×¢ÊÍĞÅÏ¢¡£
-¡¡¡¡×¢ÊÍĞÅÏ¢ºóÃæÊÇÊôĞÔÎÄ¼şµÄµ±Ç°±£´æÊ±¼äĞÅÏ¢¡£
+ã€€ã€€å¦‚æœcommentsä¸ä¸ºç©ºï¼Œä¿å­˜åçš„å±æ€§æ–‡ä»¶ç¬¬ä¸€è¡Œä¼šæ˜¯#comments,è¡¨ç¤ºæ³¨é‡Šä¿¡æ¯ï¼›å¦‚æœä¸ºç©ºåˆ™æ²¡æœ‰æ³¨é‡Šä¿¡æ¯ã€‚
+ã€€ã€€æ³¨é‡Šä¿¡æ¯åé¢æ˜¯å±æ€§æ–‡ä»¶çš„å½“å‰ä¿å­˜æ—¶é—´ä¿¡æ¯ã€‚
 (3)getProperty/setProperty
- ¡¡¡¡ÕâÁ½¸ö·½·¨ÊÇ·Ö±ğÊÇ»ñÈ¡ºÍÉèÖÃÊôĞÔĞÅÏ¢¡£
-3.´úÂëÊµÀı
- ÊôĞÔÎÄ¼şa.propertiesÈçÏÂ£º
+ ã€€ã€€è¿™ä¸¤ä¸ªæ–¹æ³•æ˜¯åˆ†åˆ«æ˜¯è·å–å’Œè®¾ç½®å±æ€§ä¿¡æ¯ã€‚
+3.ä»£ç å®ä¾‹
+ å±æ€§æ–‡ä»¶a.propertieså¦‚ä¸‹ï¼š
 name=root
 pass=liu
 key=value
-¶ÁÈ¡a.propertiesÊôĞÔÁĞ±í£¬ÓëÉú³ÉÊôĞÔÎÄ¼şb.properties¡£´úÂëÈçÏÂ£º
-¸´ÖÆ´úÂë
+è¯»å–a.propertieså±æ€§åˆ—è¡¨ï¼Œä¸ç”Ÿæˆå±æ€§æ–‡ä»¶b.propertiesã€‚ä»£ç å¦‚ä¸‹ï¼š
+å¤åˆ¶ä»£ç 
  1 import java.io.BufferedInputStream;
  2 import java.io.FileInputStream;
  3 import java.io.FileOutputStream;
@@ -34,9 +34,9 @@ key=value
  9     public static void main(String[] args) { 
 10         Properties prop = new Properties();     
 11         try{
-12             //¶ÁÈ¡ÊôĞÔÎÄ¼şa.properties
+12             //è¯»å–å±æ€§æ–‡ä»¶a.properties
 13             InputStream in = new BufferedInputStream (new FileInputStream("a.properties"));
-14             prop.load(in);     ///¼ÓÔØÊôĞÔÁĞ±í
+14             prop.load(in);     ///åŠ è½½å±æ€§åˆ—è¡¨
 15             Iterator<String> it=prop.stringPropertyNames().iterator();
 16             while(it.hasNext()){
 17                 String key=it.next();
@@ -44,8 +44,8 @@ key=value
 19             }
 20             in.close();
 21             
-22             ///±£´æÊôĞÔµ½b.propertiesÎÄ¼ş
-23             FileOutputStream oFile = new FileOutputStream("b.properties", true);//true±íÊ¾×·¼Ó´ò¿ª
+22             ///ä¿å­˜å±æ€§åˆ°b.propertiesæ–‡ä»¶
+23             FileOutputStream oFile = new FileOutputStream("b.properties", true);//trueè¡¨ç¤ºè¿½åŠ æ‰“å¼€
 24             prop.setProperty("phone", "10086");
 25             prop.store(oFile, "The New properties file");
 26             oFile.close();
@@ -55,21 +55,3 @@ key=value
 30         }
 31     } 
 32 }
-¸´ÖÆ´úÂë
- 
-·ÖÀà: java±à³Ì
-ºÃÎÄÒª¶¥ ¹Ø×¢ÎÒ ÊÕ²Ø¸ÃÎÄ    
-Ğñ¶«µÄ²©¿Í
-¹Ø×¢ - 12
-·ÛË¿ - 241
-+¼Ó¹Ø×¢
-13 0
-? ÉÏÒ»Æª£ºJava Á¬½ÓMS AccessÊı¾İ¿â
-? ÏÂÒ»Æª£ºJavaÊµÏÖ¶ÔMysqlµÄÍ¼Æ¬´æÈ¡²Ù×÷
-posted on 2014-05-29 10:19 Ğñ¶«µÄ²©¿Í ÔÄ¶Á(133467) ÆÀÂÛ(2) ±à¼­ ÊÕ²Ø
-ÆÀÂÛ
-
-#1Â¥   »Ø¸´ÒıÓÃ
-²»´íÅ¶£¬²âÊÔ³É¹¦ÁË£¬µ«ÊÇ´æÔÚĞèÒª¸Ä½øµÄµØ·½£º
-1¡¢¿Í»§¶ËÑéÖ¤µÄÊ±ºò£¬¶ÁÈ¡µÄcreateparam.properties£¬Ó¦¸ÃÖ±½Ó¶Á¼ÆËã»ú±¾ÉíµÄMAC²Å¶Ô°É£¿
-2¡¢Ğí¿ÉÖ¤Éú³ÉµÄÊ±ºò£¬»¹ÊÇ¶ÁÈ¡µÄcreateparam.properties£¬¾İÎÒËùÖª£¬Ò»°ã¹«Ë¾×ö·¨ÊÇÔÚÏµÍ³Æô¶¯µÄÊ±ºò×Ô¶¯Éú³ÉSNÎÄ¼ş£¬ÀïÃæÊÇÒ»´®¼ÓÃÜÁËµÄ×Ö·û´®£¨½«MAC,IPµÈĞÅÏ¢½øĞĞÁË¼ÓÃÜ£©£¬·şÎñ¶ËÔÙ¸ù¾İSNÉú³Élicense¡£
