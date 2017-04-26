@@ -1,0 +1,75 @@
+1.Properties类与Properties配置文件
+　　Properties类继承自Hashtable类并且实现了Map接口，也是使用一种键值对的形式来保存属性集。不过Properties有特殊的地方，就是它的键和值都是字符串类型。
+2.Properties中的主要方法
+(1)load(InputStream inStream)
+ 　　这个方法可以从.properties属性文件对应的文件输入流中，加载属性列表到Properties类对象。如下面的代码：
+Properties pro = new Properties();
+FileInputStream in = new FileInputStream("a.properties");
+pro.load(in);
+in.close();
+(2)store(OutputStream out, String comments)
+ 　　这个方法将Properties类对象的属性列表保存到输出流中。如下面的代码：
+FileOutputStream oFile = new FileOutputStream(file, "a.properties");
+pro.store(oFile, "Comment");
+oFile.close();
+　　如果comments不为空，保存后的属性文件第一行会是#comments,表示注释信息；如果为空则没有注释信息。
+　　注释信息后面是属性文件的当前保存时间信息。
+(3)getProperty/setProperty
+ 　　这两个方法是分别是获取和设置属性信息。
+3.代码实例
+ 属性文件a.properties如下：
+name=root
+pass=liu
+key=value
+读取a.properties属性列表，与生成属性文件b.properties。代码如下：
+复制代码
+ 1 import java.io.BufferedInputStream;
+ 2 import java.io.FileInputStream;
+ 3 import java.io.FileOutputStream;
+ 4 import java.io.InputStream; 
+ 5 import java.util.Iterator;
+ 6 import java.util.Properties; 
+ 7 
+ 8 public class PropertyTest {
+ 9     public static void main(String[] args) { 
+10         Properties prop = new Properties();     
+11         try{
+12             //读取属性文件a.properties
+13             InputStream in = new BufferedInputStream (new FileInputStream("a.properties"));
+14             prop.load(in);     ///加载属性列表
+15             Iterator<String> it=prop.stringPropertyNames().iterator();
+16             while(it.hasNext()){
+17                 String key=it.next();
+18                 System.out.println(key+":"+prop.getProperty(key));
+19             }
+20             in.close();
+21             
+22             ///保存属性到b.properties文件
+23             FileOutputStream oFile = new FileOutputStream("b.properties", true);//true表示追加打开
+24             prop.setProperty("phone", "10086");
+25             prop.store(oFile, "The New properties file");
+26             oFile.close();
+27         }
+28         catch(Exception e){
+29             System.out.println(e);
+30         }
+31     } 
+32 }
+复制代码
+ 
+分类: java编程
+好文要顶 关注我 收藏该文    
+旭东的博客
+关注 - 12
+粉丝 - 241
++加关注
+13 0
+? 上一篇：Java 连接MS Access数据库
+? 下一篇：Java实现对Mysql的图片存取操作
+posted on 2014-05-29 10:19 旭东的博客 阅读(133467) 评论(2) 编辑 收藏
+评论
+
+#1楼   回复引用
+不错哦，测试成功了，但是存在需要改进的地方：
+1、客户端验证的时候，读取的createparam.properties，应该直接读计算机本身的MAC才对吧？
+2、许可证生成的时候，还是读取的createparam.properties，据我所知，一般公司做法是在系统启动的时候自动生成SN文件，里面是一串加密了的字符串（将MAC,IP等信息进行了加密），服务端再根据SN生成license。
